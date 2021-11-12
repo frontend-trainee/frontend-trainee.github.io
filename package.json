@@ -1,12 +1,17 @@
 {
   "name": "micro-frontend-base",
   "version": "0.0.0",
+  "author": {
+    "name": "MleMoe",
+    "e-mail": "i@mle.moe"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "qiankun": "^2.5.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },

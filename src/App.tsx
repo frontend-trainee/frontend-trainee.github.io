@@ -1,45 +1,49 @@
 import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from 'antd';
+import { DesktopOutlined, PieChartOutlined } from '@ant-design/icons';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import './App.less';
 
-function App() {
-  const [count, setCount] = useState(0);
+const { Header, Content, Footer, Sider } = Layout;
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const onCollapse = (collapsed: any) => {
+    setCollapsed(collapsed);
+  };
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type='button' onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+          <div className='logo' />
+          <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
+            <Menu.Item key='1' icon={<PieChartOutlined />}>
+              {/* Vite 应用 */}
+              <Link to='/app-1'>Vite应用</Link>
+            </Menu.Item>
+            <Menu.Item key='2' icon={<DesktopOutlined />}>
+              {/* <Link to='/app-1'>React应用</Link> */}
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout className='site-layout'>
+          <Header className='site-layout-background' style={{ padding: 0 }} />
+          <Content style={{ margin: '16px' }}>
+            <div
+              id='container'
+              className='site-layout-background'
+              style={{ minHeight: 360 }}
+            ></div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>
+            This Project ©2021 Created by DiDi
+          </Footer>
+        </Layout>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;

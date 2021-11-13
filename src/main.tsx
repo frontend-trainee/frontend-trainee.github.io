@@ -15,16 +15,16 @@ ReactDOM.render(
 registerMicroApps([
   {
     name: 'viteApp', // app name registered
-    entry: '//mlemoe.github.io/frontend-mentor/',
-    container: '#child-container',
-    activeRule: '/yourActiveRule',
+    entry: '//localhost:3000/frontend-mentor/',
+    container: '#container',
+    activeRule: '/app-1',
   },
-  {
-    name: 'vueApp',
-    entry: { scripts: ['//localhost:7100/main.js'] },
-    container: '#child-container',
-    activeRule: '/yourActiveRule2',
-  },
+  // {
+  //   name: 'vueApp',
+  //   entry: { scripts: ['//localhost:7100/main.js'] },
+  //   container: '#container',
+  //   activeRule: '/app-2',
+  // },
 ]);
 
 start();

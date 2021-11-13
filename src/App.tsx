@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { DesktopOutlined, PieChartOutlined } from '@ant-design/icons';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 import './App.less';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -21,7 +21,7 @@ const App = () => {
           <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
             <Menu.Item key='1' icon={<PieChartOutlined />}>
               {/* Vite 应用 */}
-              <Link to='/app-1'>Vite应用</Link>
+              <Link to='/app-react'>react应用</Link>
             </Menu.Item>
             <Menu.Item key='2' icon={<DesktopOutlined />}>
               {/* <Link to='/app-1'>React应用</Link> */}

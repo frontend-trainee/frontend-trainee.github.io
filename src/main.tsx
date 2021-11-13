@@ -12,12 +12,14 @@ ReactDOM.render(
   document.getElementById('root-0')
 );
 
+const getActiveRule = (hash: string) => (location: any) =>
+  location.hash.startsWith(hash);
 registerMicroApps([
   {
     name: 'viteApp', // app name registered
-    entry: '//localhost:3000/frontend-mentor/',
+    entry: '//localhost:3000/',
     container: '#container',
-    activeRule: '/app-1',
+    activeRule: getActiveRule('#/app-react'),
   },
   // {
   //   name: 'vueApp',

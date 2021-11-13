@@ -17,7 +17,7 @@ const getActiveRule = (hash: string) => (location: any) =>
 registerMicroApps([
   {
     name: 'viteApp', // app name registered
-    entry: '//localhost:3000/',
+    entry: '//frontend-trainee.github.io/react-app-child',
     container: '#container',
     activeRule: getActiveRule('#/app-react'),
   },

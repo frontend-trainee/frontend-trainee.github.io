@@ -14,10 +14,16 @@ ReactDOM.render(
 
 const getActiveRule = (hash: string) => (location: any) =>
   location.hash.startsWith(hash);
+
+// 是否 production 环境
+const isEnvProd = import.meta.env.PROD;
+const prodEntryPrefix = '//frontend-trainee.github.io';
+
 registerMicroApps([
   {
     name: 'viteApp', // app name registered
-    entry: '//frontend-trainee.github.io/react-app-child',
+    entry:
+      (isEnvProd ? prodEntryPrefix : '//localhost:3000') + '/react-app-child',
     container: '#container',
     activeRule: getActiveRule('#/app-react'),
   },

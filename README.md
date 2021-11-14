@@ -7,6 +7,8 @@
 - base 应用：gallery 项目展示画廊
 - micro 应用(s)：N X 前端项目（不同的 github repo，部署在 gh-pages）
 
+主要是想在公司资源/自备云服务器外，探索一种 微前端 + github pages 的社区架构
+
 ## 来由
 
 众所周知...前端技术 N 多&更新迭代速度堪比 🚀 。虽然说基础牢固可以很淡定，但谁又没有个手痒想追下潮流的时候呢？
@@ -45,7 +47,7 @@
 - [x] base 应用
 - micro 应用
   - [x] react + webpack
-  - [] vue
+  - [ ] vue
 
 ## 使用技术
 

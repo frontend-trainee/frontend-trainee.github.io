@@ -24,7 +24,7 @@ const App = () => {
               <Link to='/app-react'>react应用</Link>
             </Menu.Item>
             <Menu.Item key='2' icon={<DesktopOutlined />}>
-              {/* <Link to='/app-1'>React应用</Link> */}
+              <Link to='/app-vue2'>vue2应用</Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -38,7 +38,7 @@ const App = () => {
             ></div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            This Project ©2021 Created by DiDi
+            This Project ©2021 Created by frontend-trainee
           </Footer>
         </Layout>
       </Layout>

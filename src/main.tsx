@@ -23,14 +23,14 @@ registerMicroApps([
   {
     name: 'viteApp', // app name registered
     entry:
-      (isEnvProd ? prodEntryPrefix : '//localhost:5000') + '/react-app-child',
+      (isEnvProd ? prodEntryPrefix : '//localhost:5000') + '/micro-app-react',
     container: '#container',
     activeRule: getActiveRule('#/app-react'),
   },
   {
     name: 'vue2App',
     entry: isEnvProd
-      ? prodEntryPrefix + '/vue2-child-app/'
+      ? prodEntryPrefix + '/micro-app-vue2/'
       : '//localhost:8080',
     container: '#container',
     activeRule: getActiveRule('#/app-vue2'),
@@ -38,7 +38,7 @@ registerMicroApps([
   {
     name: 'vue3App',
     entry: isEnvProd
-      ? prodEntryPrefix + '/vue3-child-app/'
+      ? prodEntryPrefix + '/micro-app-vue3/'
       : '//localhost:8081',
     // entry: { scripts: ['//localhost:7100/main.js'] },
     container: '#container',

@@ -21,7 +21,7 @@ const prodEntryPrefix = '//frontend-trainee.github.io';
 
 registerMicroApps([
   {
-    name: 'viteApp', // app name registered
+    name: 'reactApp', // app name registered
     entry:
       (isEnvProd ? prodEntryPrefix : '//localhost:5000') + '/micro-app-react',
     container: '#container',

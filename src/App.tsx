@@ -26,6 +26,9 @@ const App = () => {
             <Menu.Item key='2' icon={<DesktopOutlined />}>
               <Link to='/app-vue2'>vue2应用</Link>
             </Menu.Item>
+            <Menu.Item key='3' icon={<DesktopOutlined />}>
+              <Link to='/app-vue3'>vue3应用</Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className='site-layout'>

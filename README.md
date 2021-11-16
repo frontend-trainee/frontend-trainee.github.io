@@ -41,15 +41,17 @@
 
 - 在同一个 user/organization 下都是同一个域名，例如 frontend-trainee.github.io，省去了 **跨域** 的问题
 - 路由，使用 hash 模式，不会请求资源，而是会响应微前端
-  > 使用 history 路由，gh-pages 会直接 404
-- 构建时注意 base
+  > 使用 history 路由的单页应用，github pages 会直接去请求该路由指向的页面，会直接 404
+- 构建时注意 public url 设定为 repo name
 
 ## 目前进度
 
 - [x] base 应用
 - micro 应用
   - [x] react + webpack
-  - [ ] vue
+  - [x] vue2 + webpack
+  - [x] vue3 + webpack
+  - todo vite...(如果时间充足)
 
 ## 使用技术
 
@@ -57,7 +59,7 @@
 
 base 应用技术栈为
 
-- [vite](https://cn.vitejs.dev/guide/)，极速构建（虽然 micro 应用目前还不支持 vite，但主应用不影响）
+- [vite](https://cn.vitejs.dev/guide/)，极速构建（虽然 micro 应用目前 qiankun 官方还不支持 vite，但主应用并不影响）
 - [react](https://zh-hans.reactjs.org/)
 - [typescript](https://www.typescriptlang.org/)
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)，简单，够用就行

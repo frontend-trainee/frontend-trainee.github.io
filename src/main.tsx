@@ -44,6 +44,14 @@ registerMicroApps([
     container: "#container",
     activeRule: getActiveRule("#/micro-app-vue3"),
   },
+  {
+    name: "time-tracking-dashboard", // app name registered
+    entry:
+      (isEnvProd ? prodEntryPrefix : "//localhost:5001") +
+      "/time-tracking-dashboard",
+    container: "#container",
+    activeRule: getActiveRule("#/time-tracking-dashboard"),
+  },
 ]);
 
 start();

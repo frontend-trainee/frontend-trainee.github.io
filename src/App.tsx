@@ -29,6 +29,9 @@ const App = () => {
             <Menu.Item key='3' icon={<DesktopOutlined />}>
               <Link to='/micro-app-vue3'>vue3应用</Link>
             </Menu.Item>
+            <Menu.Item key='4' icon={<DesktopOutlined />}>
+              <Link to='/time-tracking-dashboard'>time-tracking</Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className='site-layout'>

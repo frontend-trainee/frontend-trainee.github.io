@@ -1,6 +1,7 @@
 import imageReact from "./images/react.png";
 import imageVue from "./images/vue.png";
 import imageTimeTracking from "./images/time-tracking.jpeg";
+import imageCalculator from "./images/calculator-app-main.png";
 
 export type MicroAppConfig = {
   name: string;
@@ -15,6 +16,24 @@ export type MicroAppConfig = {
 };
 
 const microAppsData: MicroAppConfig[] = [
+  {
+    name: "calculator-app-main",
+    link: "/calculator-app-main",
+    image: imageCalculator,
+    techs: ["React", "JS", "CSS", "HTML"],
+    author: "Cicici-Shi/ccibx",
+    localPort: 5002,
+    type: "react",
+  },
+  {
+    name: "time-tracking-dashboard",
+    link: "/time-tracking-dashboard",
+    image: imageTimeTracking,
+    techs: ["React", "JS", "CSS", "HTML"],
+    author: "Mia",
+    localPort: 5001,
+    type: "react",
+  },
   {
     name: "micro-app-react",
     link: "/micro-app-react",
@@ -41,15 +60,6 @@ const microAppsData: MicroAppConfig[] = [
     author: "Mia",
     localPort: 8081,
     type: "vue",
-  },
-  {
-    name: "time-tracking-dashboard",
-    link: "/time-tracking-dashboard",
-    image: imageTimeTracking,
-    techs: ["React", "JS", "CSS", "HTML"],
-    author: "Mia",
-    localPort: 5001,
-    type: "react",
   },
 ];
 

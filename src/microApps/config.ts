@@ -2,6 +2,7 @@ import imageReact from "./images/react.png";
 import imageVue from "./images/vue.png";
 import imageTimeTracking from "./images/time-tracking.jpeg";
 import imageCalculator from "./images/calculator-app-main.png";
+import imageVueVisualization from "./images/vue-visualization.png";
 
 export type MicroAppConfig = {
   name: string;
@@ -16,6 +17,15 @@ export type MicroAppConfig = {
 };
 
 const microAppsData: MicroAppConfig[] = [
+  {
+    name: "vue-visualization",
+    link: "/vue-visualization/",
+    image: imageVueVisualization,
+    techs: ["Vue2", "JS", "CSS", "HTML"],
+    author: "hardingCheng",
+    localPort: 8082,
+    type: "vue",
+  },
   {
     name: "calculator-app-main",
     link: "/calculator-app-main",

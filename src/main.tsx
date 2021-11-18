@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 
 import { registerMicroApps, start } from "qiankun";
+import { microAppsData } from "./microApps/config";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,39 +20,62 @@ const getActiveRule = (hash: string) => (location: any) =>
 const isEnvProd = import.meta.env.PROD;
 const prodEntryPrefix = "//frontend-trainee.github.io";
 
-registerMicroApps([
-  {
-    name: "reactApp", // app name registered
-    entry:
-      (isEnvProd ? prodEntryPrefix : "//localhost:5000") + "/micro-app-react",
-    container: "#container",
-    activeRule: getActiveRule("#/micro-app-react"),
-  },
-  {
-    name: "vue2App",
+/**
+ * name: string;
+  link: string;
+  image: string;
+  techs: string[];
+  author?: string;
+  avator?: string;
+  localPort?: number;
+  type: "react" | "vue";
+ */
+
+const microAppsConfig = microAppsData.map(
+  ({ name, link, localPort, type }) => ({
+    name,
     entry: isEnvProd
-      ? prodEntryPrefix + "/micro-app-vue2/"
-      : "//localhost:8080",
+      ? prodEntryPrefix + link
+      : "//localhost:" + localPort + (type == "react" ? link : ""),
     container: "#container",
-    activeRule: getActiveRule("#/micro-app-vue2"),
-  },
-  {
-    name: "vue3App",
-    entry: isEnvProd
-      ? prodEntryPrefix + "/micro-app-vue3/"
-      : "//localhost:8081",
-    // entry: { scripts: ['//localhost:7100/main.js'] },
-    container: "#container",
-    activeRule: getActiveRule("#/micro-app-vue3"),
-  },
-  {
-    name: "time-tracking-dashboard", // app name registered
-    entry:
-      (isEnvProd ? prodEntryPrefix : "//localhost:5001") +
-      "/time-tracking-dashboard",
-    container: "#container",
-    activeRule: getActiveRule("#/time-tracking-dashboard"),
-  },
-]);
+    activeRule: getActiveRule("#" + link),
+  })
+);
+
+registerMicroApps(microAppsConfig);
+//   [
+//   {
+//     name: "reactApp", // app name registered
+//     entry:
+//       (isEnvProd ? prodEntryPrefix : "//localhost:5000") + "/micro-app-react",
+//     container: "#container",
+//     activeRule: getActiveRule("#/micro-app-react"),
+//   },
+//   {
+//     name: "vue2App",
+//     entry: isEnvProd
+//       ? prodEntryPrefix + "/micro-app-vue2/"
+//       : "//localhost:8080",
+//     container: "#container",
+//     activeRule: getActiveRule("#/micro-app-vue2"),
+//   },
+//   {
+//     name: "vue3App",
+//     entry: isEnvProd
+//       ? prodEntryPrefix + "/micro-app-vue3/"
+//       : "//localhost:8081",
+//     // entry: { scripts: ['//localhost:7100/main.js'] },
+//     container: "#container",
+//     activeRule: getActiveRule("#/micro-app-vue3"),
+//   },
+//   {
+//     name: "time-tracking-dashboard", // app name registered
+//     entry:
+//       (isEnvProd ? prodEntryPrefix : "//localhost:5001") +
+//       "/time-tracking-dashboard",
+//     container: "#container",
+//     activeRule: getActiveRule("#/time-tracking-dashboard"),
+//   },
+// ];
 
 start();

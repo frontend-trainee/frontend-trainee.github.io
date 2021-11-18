@@ -1,4 +1,8 @@
-@import 'antd/dist/antd.css';
+@import "antd/dist/antd.css";
+
+.ant-layout-sider {
+  background-color: #fff;
+}
 
 #components-layout-demo-side .logo {
   height: 32px;
@@ -8,4 +12,24 @@
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.logo {
+  font-family: Fontspring;
+  font-size: 32px;
+  width: 300px;
+  height: 40px;
+}
+
+.ft {
+  &-sider {
+    width: 500px;
+  }
+}
+
+.content {
+  display: flex;
+  & > div {
+    flex-grow: 1;
+  }
 }

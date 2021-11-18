@@ -26,7 +26,7 @@ const microAppsData: MicroAppConfig[] = [
   },
   {
     name: "micro-app-vue2",
-    link: "/micro-app-vue2",
+    link: "/micro-app-vue2/",
     image: imageVue,
     techs: ["Vue2", "JS", "CSS", "HTML"],
     author: "Mia",

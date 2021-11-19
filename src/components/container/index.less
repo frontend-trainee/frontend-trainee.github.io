@@ -1,3 +1,46 @@
 #container {
   padding: 20px;
 }
+
+.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(245, 245, 245, 0.5);
+  font-family: "Ma Shan Zheng", cursive;
+
+  &-container {
+    position: relative;
+    top: -80px;
+    font-family: Fontspring, "Ma Shan Zheng";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &-title {
+    font-size: 36px;
+    margin: 32px 0;
+  }
+  &-content {
+    font-size: 20px;
+    color: #1c2022;
+    & > div {
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+  &-author {
+    font-size: 32px;
+    font-family: Fontspring, cursive;
+    // justify-self: right;
+    // align-self: flex-end;
+    margin: 32px 0;
+  }
+}
+
+.groupName {
+  margin-left: 20px;
+}

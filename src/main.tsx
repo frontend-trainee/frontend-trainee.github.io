@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps, start, setDefaultMountApp } from "qiankun";
 import { microAppsData } from "./microApps/config";
 
 ReactDOM.render(
@@ -20,17 +20,6 @@ const getActiveRule = (hash: string) => (location: any) =>
 const isEnvProd = import.meta.env.PROD;
 const prodEntryPrefix = "//frontend-trainee.github.io";
 
-/**
- * name: string;
-  link: string;
-  image: string;
-  techs: string[];
-  author?: string;
-  avator?: string;
-  localPort?: number;
-  type: "react" | "vue";
- */
-
 const microAppsConfig = microAppsData.map(
   ({ name, link, localPort, type }) => ({
     name,
@@ -43,5 +32,6 @@ const microAppsConfig = microAppsData.map(
 );
 
 registerMicroApps(microAppsConfig);
+// setDefaultMountApp("#/time-tracking-dashboard");
 
 start();

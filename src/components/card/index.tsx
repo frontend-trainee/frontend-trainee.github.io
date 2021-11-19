@@ -24,14 +24,14 @@ const FtCard: FC<FtCardProps> = ({
 }) => {
   return (
     <div className='card'>
-      <a href={link}>
+      <Link to={link}>
         <div
           className='card-image'
           style={{
             backgroundImage: `url(${image})`,
           }}
         ></div>
-      </a>
+      </Link>
       <div className='card-content'>
         <a href={pageLink}>
           <div className='card-title'>{name}</div>
@@ -51,8 +51,8 @@ const FtCard: FC<FtCardProps> = ({
         <div className='card-author'>
           {authors.map((author, aIndex) => {
             return (
-              <a href={author.link}>
-                <span key={aIndex}>@{author.username}</span>
+              <a href={author.link} key={aIndex}>
+                <span>@{author.username}</span>
               </a>
             );
           })}

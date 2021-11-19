@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 @font-face {
   font-family: "Fontspring";
   src: url("./assets/fonts/Fontspring-DEMO-blue_vinyl_regular_ps_ot.otf");
@@ -24,9 +25,4 @@ code {
 @font-face {
   font-family: "BarlowBold";
   src: url("./assets/fonts/Barlow-Bold.ttf");
-}
-
-#child-container {
-  width: 100vw;
-  height: 100vh;
 }

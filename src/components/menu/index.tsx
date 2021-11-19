@@ -13,12 +13,18 @@ type FtMenuProps = {
 const FtMenu: FC<FtMenuProps> = ({ items }) => {
   const [open, setOpen] = useState(true);
   return (
-    <div className={"menu" + `${open ? " open" : ""}`}>
-      {items.map((item, index) => (
-        <FtCard {...item} key={index} />
-      ))}
-      <div className='footer'>
-        <img src={iconToggle} onClick={() => setOpen((old) => !old)} />
+    <div className='menu-wrap'>
+      <div className={"menu" + `${open ? " open" : ""}`}>
+        {items.map((item, index) => (
+          <FtCard {...item} key={index} />
+        ))}
+        <div className='footer'>
+          2021
+          <a href='https://github.com/frontend-trainee'>
+            @github/frontend-trainee
+          </a>
+          {/* <img src={iconToggle} onClick={() => setOpen((old) => !old)} /> */}
+        </div>
       </div>
     </div>
   );

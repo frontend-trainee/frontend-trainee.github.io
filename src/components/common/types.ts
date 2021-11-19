@@ -1,8 +1,12 @@
 export type FtCardProps = {
   name: string;
   link: string;
+  pageLink: string;
   image: string;
   techs: string[];
-  author?: string;
-  avator?: string;
+  authors?: {
+    username: string;
+    link: string;
+    avator?: string;
+  }[];
 };

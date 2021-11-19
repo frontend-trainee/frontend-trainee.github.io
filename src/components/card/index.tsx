@@ -5,50 +5,60 @@ import { HashRouter as Router, Link } from "react-router-dom";
 import "./index.less";
 
 const techColor: { [key in any]: string } = {
-  vue: "#4fc08d",
+  vue2: "#4fc08d",
+  vue3: "#4fc08d",
   react: "#61dafb",
   html: "#6abecd",
   css: "#3e54a3",
   js: "#e13784",
+  ts: "#6abecd",
 };
 
 const FtCard: FC<FtCardProps> = ({
   name,
   link,
+  pageLink,
   image,
   techs,
-  author = "XX",
-  avator,
+  authors = [],
 }) => {
   return (
-    <Link to={link}>
-      <div className='card'>
+    <div className='card'>
+      <a href={link}>
         <div
           className='card-image'
           style={{
             backgroundImage: `url(${image})`,
           }}
         ></div>
-        <div className='card-content'>
+      </a>
+      <div className='card-content'>
+        <a href={pageLink}>
           <div className='card-title'>{name}</div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div className='card-techs'>
-              {techs.map((tech, tIndex) => {
-                return (
-                  <span
-                    key={tIndex}
-                    style={{ color: techColor[tech.toLowerCase()] }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
-            <div className='card-author'>@{author}</div>
-          </div>
+        </a>
+        <div className='card-techs'>
+          {techs.map((tech, tIndex) => {
+            return (
+              <span
+                key={tIndex}
+                style={{ color: techColor[tech.toLowerCase()] }}
+              >
+                {tech}
+              </span>
+            );
+          })}
+        </div>
+        <div className='card-author'>
+          {authors.map((author, aIndex) => {
+            return (
+              <a href={author.link}>
+                <span key={aIndex}>@{author.username}</span>
+              </a>
+            );
+          })}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

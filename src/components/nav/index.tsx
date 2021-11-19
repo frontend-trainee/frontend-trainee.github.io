@@ -7,9 +7,9 @@ type FtNavProps = {};
 const FtNav: FC<FtNavProps> = () => {
   return (
     <div className='nav'>
-      <Link to='/'>
-        <div className='nav-title'>Frontend Trainee</div>
-      </Link>
+      {/* <Link to='/'> */}
+      <div className='nav-title'>Frontend Trainee</div>
+      {/* </Link> */}
     </div>
   );
 };
